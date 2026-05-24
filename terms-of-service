@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Norbo</title>
+  <meta name="description" content="Terms of service for Norbo, an app for managing your pets' lives." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <style>
+    :root {
+      --primary: #5F7C58;
+      --primary-dark: #3D4E3A;
+      --primary-soft: #EEF1EB;
+      --primary-hover: #4F6A49;
+      --bg: #FAF6EF;
+      --bg-card: #FFFEFB;
+      --bg-band: #5F7C58;
+      --text: #1F261D;
+      --text-muted: #5A5F55;
+      --text-light: #8A8F84;
+      --border: #E5E0D5;
+      --border-soft: #F0EBE0;
+      --accent: #C89A5C;
+      --warning-bg: #FBF1E1;
+      --warning-border: #C89A5C;
+      --warning-text: #6E4F1F;
+      --shadow-sm: 0 1px 2px rgba(31, 38, 29, 0.04);
+      --shadow-md: 0 4px 16px rgba(31, 38, 29, 0.06);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .top-band {
+      background: var(--bg-band);
+      padding: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 50%);
+      pointer-events: none;
+    }
+    .brand {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand img { width: 44px; height: 44px; display: block; }
+    .brand-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      color: #FAF6EF;
+      font-variation-settings: "opsz" 36;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 246, 239, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 160ms ease;
+    }
+    .nav-links a:hover { color: var(--primary-dark); background: var(--primary-soft); }
+    .nav-links a.active { color: var(--bg); background: var(--primary); }
+    .nav-back {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 160ms ease;
+    }
+    .nav-back:hover { color: var(--primary-dark); }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 24px 32px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(36px, 5.5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 20px;
+      font-variation-settings: "opsz" 144;
+      max-width: 18ch;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 400;
+    }
+    .lede {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 60ch;
+    }
+    .meta {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+    .meta-item strong { color: var(--text); font-weight: 600; }
+
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; gap: 24px; padding-top: 16px; }
+    }
+
+    .toc {
+      position: sticky;
+      top: 80px;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+    @media (max-width: 860px) { .toc { position: static; } }
+    .toc-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 14px;
+    }
+    .toc ol { list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; }
+    .toc a {
+      display: block;
+      padding: 6px 0 6px 28px;
+      position: relative;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.45;
+      transition: color 140ms ease;
+    }
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 6px;
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--primary);
+      font-variation-settings: "opsz" 9;
+    }
+    .toc a:hover { color: var(--primary-dark); }
+
+    article { max-width: 68ch; }
+    section { margin-bottom: 48px; scroll-margin-top: 80px; }
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      margin-bottom: 16px;
+      font-variation-settings: "opsz" 72;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+    h2::before {
+      content: attr(data-num);
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--primary);
+      font-variation-settings: "opsz" 9;
+      letter-spacing: 0;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--text);
+      margin: 24px 0 8px;
+      letter-spacing: -0.005em;
+    }
+
+    p { margin-bottom: 14px; color: var(--text); }
+
+    ul, ol.list {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 14px;
+    }
+    ul li, ol.list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    ul li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+    ol.list { counter-reset: ol; }
+    ol.list li { counter-increment: ol; }
+    ol.list li::before {
+      content: counter(ol) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    strong { color: var(--text); font-weight: 600; }
+    a.inline {
+      color: var(--primary-dark);
+      text-decoration: underline;
+      text-decoration-color: var(--primary);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+      transition: color 140ms ease;
+    }
+    a.inline:hover { color: var(--primary); }
+
+    .callout {
+      margin: 20px 0;
+      padding: 18px 22px;
+      background: var(--primary-soft);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .callout-title {
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .callout p { color: var(--text); font-size: 15px; margin: 0; }
+
+    .callout.warn {
+      background: var(--warning-bg);
+      border-left-color: var(--warning-border);
+    }
+    .callout.warn .callout-title { color: var(--warning-text); }
+
+    .data-table {
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .data-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: 15px;
+    }
+    .data-row:last-child { border-bottom: none; }
+    .data-key { font-weight: 600; color: var(--primary-dark); }
+    .data-val { color: var(--text-muted); }
+    @media (max-width: 600px) {
+      .data-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: #DDE3D9;
+      padding: 48px 24px;
+      margin-top: 40px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 20px;
+      color: #FAF6EF;
+    }
+    .footer-brand img { width: 32px; height: 32px; }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: #DDE3D9;
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 140ms ease;
+    }
+    .footer-links a:hover { opacity: 1; text-decoration: underline; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      opacity: 0.65;
+    }
+
+    .hero > * { animation: fadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+    .hero .eyebrow { animation-delay: 0ms; }
+    .hero h1 { animation-delay: 80ms; }
+    .hero .lede { animation-delay: 160ms; }
+    .hero .meta { animation-delay: 240ms; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-band">
+    <div class="brand">
+      <img src="logo.png" alt="Norbo logo" />
+      <span class="brand-name">Norbo</span>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Legal documents navigation">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="terms-of-service.html" class="active">Terms of Service</a></li>
+      </ul>
+      <a href="#" class="nav-back" aria-label="Back to app">← Back to app</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Agreement</span>
+    <h1>Terms of <em>Service</em></h1>
+    <p class="lede">This document governs the relationship between you and Norbo. It's written as plainly as possible: no hidden clauses, no traps. Norbo is a personal project built by an independent developer, not a company. If anything doesn't add up, just write.</p>
+    <div class="meta">
+      <span class="meta-item"><strong>Version</strong> 1.0</span>
+      <span class="meta-item"><strong>Last updated</strong> 24 May 2026</span>
+      <span class="meta-item"><strong>Language</strong> English</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside class="toc" aria-label="Table of contents">
+      <div class="toc-title">On this page</div>
+      <ol>
+        <li><a href="#acceptance">Acceptance of terms</a></li>
+        <li><a href="#about">About the service</a></li>
+        <li><a href="#account">Account and registration</a></li>
+        <li><a href="#use">Acceptable use</a></li>
+        <li><a href="#content">Your content</a></li>
+        <li><a href="#vet-disclaimer">Care info and vet disclaimer</a></li>
+        <li><a href="#exotic">Exotic animals and legality</a></li>
+        <li><a href="#ip">Intellectual property</a></li>
+        <li><a href="#suspension">Suspension and deletion</a></li>
+        <li><a href="#availability">Service availability</a></li>
+        <li><a href="#liability">Limitation of liability</a></li>
+        <li><a href="#changes">Changes to these terms</a></li>
+        <li><a href="#law">Governing law</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </aside>
+
+    <article>
+
+      <section id="acceptance">
+        <h2 data-num="01">Acceptance of terms</h2>
+        <p>These Terms of Service (the "Terms") govern your use of the Norbo mobile application (the "App" or the "Service"), built and operated by Marius Trica, an individual indie developer based in Italy (referred to in this document as "I" or "me").</p>
+        <p>By creating an account or using the App, you confirm that you have read, understood, and accepted these Terms in full, along with the <a class="inline" href="privacy-policy.html">Privacy Policy</a>, which is part of this agreement.</p>
+        <p>If you do not agree, even in part, please do not use the App.</p>
+      </section>
+
+      <section id="about">
+        <h2 data-num="02">About the service</h2>
+        <p>Norbo is a mobile application for managing the lives of domestic and non-domestic animals. It lets you, among other things:</p>
+        <ul>
+          <li>Record information about your animals (dogs, cats, fish, birds, reptiles, small mammals, amphibians, invertebrates, equines, farm animals, and other categories);</li>
+          <li>Keep a timeline of health and life events (vaccinations, visits, weight, environmental parameters, photos);</li>
+          <li>Set reminders for health due dates, maintenance tasks, document renewals, and milestones;</li>
+          <li>Keep a photo album and a record of your expenses;</li>
+          <li>Browse general care information by animal category.</li>
+        </ul>
+        <p>Norbo is a personal organization tool. It is <strong>not</strong> a veterinary service or a substitute for one.</p>
+        <div class="callout">
+          <div class="callout-title">A personal project</div>
+          <p>Norbo is built and run as a personal project by one indie developer. There is no company behind it, no team, no shareholders. The service is offered to you free of charge, with no in-app purchases or paid tiers.</p>
+        </div>
+      </section>
+
+      <section id="account">
+        <h2 data-num="03">Account and registration</h2>
+        <p>To use the App you need to create an account by providing a valid email address and a password, or by signing in with Google or Apple. To register, you must:</p>
+        <ul>
+          <li>Be at least 16 years old (or the minimum age required for data-protection consent in your country);</li>
+          <li>Provide accurate information and keep it up to date;</li>
+          <li>Keep your credentials safe and not share them with anyone else.</li>
+        </ul>
+        <p>You are solely responsible for any activity carried out through your account. If you notice unauthorized access or suspicious activity, please contact me immediately at <a class="inline" href="mailto:tricabit@gmail.com">tricabit@gmail.com</a>.</p>
+      </section>
+
+      <section id="use">
+        <h2 data-num="04">Acceptable use</h2>
+        <p>You agree to use the App lawfully, fairly, and in accordance with these Terms. In particular, you agree not to:</p>
+        <ul>
+          <li>Use the App for unlawful or fraudulent purposes, or in ways that infringe third parties' rights;</li>
+          <li>Upload unlawful, defamatory, obscene, violent, offensive, or copyrighted content (where you are not authorized to do so);</li>
+          <li>Attempt to access Norbo's systems or other users' data without authorization, or interfere with the service's operation;</li>
+          <li>Reverse-engineer, decompile, disassemble, or attempt to derive the source code of the App, except to the extent allowed by law;</li>
+          <li>Use bots, scrapers, or automated tools to extract data or overload the infrastructure;</li>
+          <li>Resell, sublicense, or redistribute the App or its features;</li>
+          <li>Use the App for commercial purposes that are not allowed under these Terms (for example, as a management tool for a professional veterinary practice, breeder, or pet business, without a specific agreement).</li>
+        </ul>
+        <p>If you violate these rules, I may suspend or delete your account, without prejudice to any legal action to protect my rights or those of other users.</p>
+      </section>
+
+      <section id="content">
+        <h2 data-num="05">Your content</h2>
+        <p>Everything you put into the App — your pet data, photos, events, expenses, notes — stays yours. You retain all rights to your content.</p>
+        <p>For the sole purpose of providing the service (storage, sync across devices, data export, backups), you grant me a limited, non-exclusive, royalty-free, worldwide, revocable license to store and process that content. This license ends automatically when you delete the content or your account.</p>
+        <p>I will never use your content for purposes other than running the service. Specifically: no commercial use, no advertising, no training of machine learning models, no sharing with third parties.</p>
+        <div class="callout">
+          <div class="callout-title">Your data stays yours</div>
+          <p>You can export all your content at any time using the "Export my data" function in the App. You'll get a structured archive that you can keep or take elsewhere.</p>
+        </div>
+      </section>
+
+      <section id="vet-disclaimer">
+        <h2 data-num="06">Care information and veterinary disclaimer</h2>
+        <p>The App may include general information about pet care, feeding, health, and wellbeing. This information:</p>
+        <ul>
+          <li>Is provided for informational purposes only;</li>
+          <li>Does not constitute veterinary or medical advice, diagnosis, prescription, or recommendation;</li>
+          <li>Is not a substitute for the judgment of a qualified veterinarian;</li>
+          <li>May not be applicable to your specific animal.</li>
+        </ul>
+        <div class="callout warn">
+          <div class="callout-title">Important</div>
+          <p>For any health, behavioral, or emergency issue, always consult a qualified veterinarian promptly. Norbo accepts no responsibility for decisions made on the basis of information shown in the App.</p>
+        </div>
+        <p>Likewise, reminders are a memory aid, not a guarantee. They don't relieve you of the responsibility to meet health, legal, or care-related due dates on time.</p>
+      </section>
+
+      <section id="exotic">
+        <h2 data-num="07">Exotic animals and legality</h2>
+        <p>Norbo supports recording animals from many categories, including reptiles, amphibians, birds, invertebrates, and fish. The fact that you can record an animal in the App is not a statement that keeping that animal is legal in your jurisdiction.</p>
+        <p>You are solely responsible for checking and complying with the laws that apply to keeping, acquiring, or moving any animal you own. In particular, keep in mind:</p>
+        <ul>
+          <li>The <strong>Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES)</strong>, which governs international trade in protected species;</li>
+          <li><strong>EC Regulation No. 338/97</strong> on the protection of species of wild fauna and flora through controls on trade;</li>
+          <li>For users in Italy: <strong>Law No. 157 of 11 February 1992</strong> on the protection of homoeothermic wildlife and hunting;</li>
+          <li>Any additional national, regional, or local laws that may apply to you.</li>
+        </ul>
+        <p>Norbo in no way encourages keeping animals in violation of applicable law and accepts no responsibility for any unlawful use of the App.</p>
+      </section>
+
+      <section id="ip">
+        <h2 data-num="08">Intellectual property</h2>
+        <p>The App, the name "Norbo", the logo, the design, the editorial content (care information), trademarks, and every other distinctive element are owned by me (or by their respective owners, where applicable) and are protected by copyright, trademark, and intellectual property laws.</p>
+        <p>I grant you a personal, limited, non-exclusive, non-transferable, revocable license to use the App for the purposes described in these Terms. No other rights are granted, expressly or by implication.</p>
+        <p>Some components of the App may be released under open-source licenses; in that case, use of those components is governed by their respective licenses.</p>
+      </section>
+
+      <section id="suspension">
+        <h2 data-num="09">Suspension and deletion</h2>
+        <h3>Deletion by you</h3>
+        <p>You can delete your account at any time, with no notice and no cost, using the "Delete account" function in the App settings. When you do:</p>
+        <ul>
+          <li>I will permanently delete your personal data within 30 days;</li>
+          <li>Any data strictly required to fulfill legal obligations will be retained for the period required by law, in minimized form.</li>
+        </ul>
+
+        <h3>Suspension or deletion by me</h3>
+        <p>I may suspend or delete your account, with prior notice where possible, in the following cases:</p>
+        <ul>
+          <li>Serious or repeated breach of these Terms;</li>
+          <li>Use of the App for unlawful purposes or in ways that infringe third parties' rights;</li>
+          <li>Conduct that puts the security of the infrastructure or other users at risk;</li>
+          <li>Discontinuation of the Service (see next section).</li>
+        </ul>
+        <p>In case of suspension or deletion, you will still be able to export your data, except where this is prevented by a legal authority's order.</p>
+      </section>
+
+      <section id="availability">
+        <h2 data-num="10">Service availability</h2>
+        <p>I aim to provide the Service with all reasonable care, but I cannot guarantee that the App will always be available, uninterrupted, or free from errors or defects. In particular:</p>
+        <ul>
+          <li>There may be interruptions for scheduled maintenance, updates, or technical reasons;</li>
+          <li>The Service depends on third-party providers (cloud, push notifications, app stores) whose downtime may affect availability;</li>
+          <li>Features may be added, changed, or removed over time, while keeping the core of the Service in place.</li>
+        </ul>
+        <p>I may discontinue the Service with reasonable notice (at least 60 days, except for cases of force majeure), giving you the chance to export your data before it shuts down.</p>
+      </section>
+
+      <section id="liability">
+        <h2 data-num="11">Limitation of liability</h2>
+        <p>The App is provided "as is" and "as available", to the maximum extent permitted by applicable law.</p>
+        <p>To the maximum extent permitted by law, I will not be liable for:</p>
+        <ul>
+          <li>Decisions you make based on information shown in the App, in particular general care information;</li>
+          <li>Harm to the health or wellbeing of any animal resulting from using the App as a substitute for veterinary advice;</li>
+          <li>A reminder failing to fire due to your device settings, lack of connectivity, OS issues, or push notification service outages;</li>
+          <li>Data loss caused by factors outside my control (e.g. accidental deletion by you, device failure on your end);</li>
+          <li>Indirect or consequential damages, lost profits, or lost opportunities.</li>
+        </ul>
+        <p>Nothing in these Terms limits my liability for willful misconduct, gross negligence, or any other liability that cannot be excluded under applicable law — in particular, statutory consumer protections.</p>
+      </section>
+
+      <section id="changes">
+        <h2 data-num="12">Changes to these terms</h2>
+        <p>I may update these Terms when the service evolves, when applicable laws change, or when my operational practices change.</p>
+        <p>The current version will always be published at this address, with the date of the last update clearly shown. For material changes, I will let you know in advance through an in-app notification or by email to the address linked to your account. If you don't agree with the changes, you can delete your account before they take effect. Continuing to use the App after the changes take effect means you accept the new Terms.</p>
+      </section>
+
+      <section id="law">
+        <h2 data-num="13">Governing law</h2>
+        <p>These Terms are governed by Italian law.</p>
+        <p>For any dispute arising out of or connected to your use of the App, the courts of Italy will have jurisdiction. This is without prejudice to your statutory rights as a consumer, including the mandatory consumer forum protections under Italian and EU consumer law: if you qualify as a consumer, you may bring or be sued in the court of your place of residence.</p>
+        <p>Before taking any legal action, please reach out to me at <a class="inline" href="mailto:tricabit@gmail.com">tricabit@gmail.com</a>. I will do my best to resolve any issue informally.</p>
+        <p>For consumer disputes, you can also use the European Online Dispute Resolution platform at <a class="inline" href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+      </section>
+
+      <section id="contact">
+        <h2 data-num="14">Contact</h2>
+        <p>For any question, request, or report related to these Terms or the Service, write to:</p>
+        <div class="data-table">
+          <div class="data-row">
+            <div class="data-key">General support</div>
+            <div class="data-val"><a class="inline" href="mailto:tricabit@gmail.com">tricabit@gmail.com</a></div>
+          </div>
+          <div class="data-row">
+            <div class="data-key">Privacy</div>
+            <div class="data-val"><a class="inline" href="mailto:tricabit@gmail.com">tricabit@gmail.com</a></div>
+          </div>
+          <div class="data-row">
+            <div class="data-key">Legal matters</div>
+            <div class="data-val"><a class="inline" href="mailto:tricabit@gmail.com">tricabit@gmail.com</a></div>
+          </div>
+        </div>
+        <p>Thanks for choosing Norbo to look after your animals.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="" />
+        <span>Norbo</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+        <li><a href="mailto:tricabit@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <div style="max-width:1100px; margin: 0 auto;">© 2026 Marius Trica · Norbo is a personal project, not a company.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
